@@ -179,43 +179,60 @@
     <main>
         <!-- Seção Hero: Exibe uma imagem de fundo com um título e informações rápidas -->
         <section 
-          id="hero" 
-          class="position-relative d-flex align-items-center justify-content-center text-center overflow-hidden min-vh-100"
-          role="img" 
-          aria-label="Hambúrguer artesanal em destaque com frase: Sabor Rústico, Alma Artesanal">
-
-          <!-- 📸 Imagem de fundo -->
-          <img src="./assets/img/banner/banner2.png" alt="Imagem de hambúrguer artesanal" 
-              class="position-absolute top-0 start-0 w-100 h-100 object-fit-cover" 
-              aria-hidden="true">
-
-          <!-- 🎨 Camada escura para melhorar legibilidade -->
-          <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-50"></div>
-
-          <!-- Texto principal da seção Hero -->
-          <div class="hero-text container position-relative text-white">
-              <h1 class="display-3 display-md-4 fw-bold text-center">Sabor Rústico, Alma Artesanal</h1>
-              <p class="lead fs-5 fs-md-4 fs-lg-3 text-center text-center">Hambúrgueres feitos à mão, com ingredientes selecionados</p>
-
-              <!-- ℹ️ Informações rápidas sobre o status do estabelecimento -->
-              <aside class="hero-info mt-4 p-3 rounded-4 mx-auto bg-opacity-75 bg-dark" 
-                    class="w-100 w-md-auto" style="max-width: 300px;">
-                  <p class="status mb-1">
-                      <i class="bi bi-check-circle-fill me-1"></i> Aberto agora
-                  </p>
-                  <p class="mb-0">
-                      <i class="bi bi-clock-fill me-1"></i> 40-50min
-                      <a href="#" 
-                      class="text-decoration-none text-warning small" 
-                      data-bs-toggle="modal" 
-                      data-bs-target="#modalHorario" 
-                      aria-describedby="modalHorarioLabel">
-                       <span class="text-warning">●</span> Ver mais
-                   </a>
-                  </p>
-              </aside>
-          </div>
+        id="hero" 
+        class="position-relative d-flex align-items-center justify-content-center text-center overflow-hidden min-vh-100"
+        role="img" 
+        aria-label="Hambúrguer artesanal em destaque com frase: Sabor Rústico, Alma Artesanal">
+      
+        <!-- 📸 Imagem de fundo -->
+        <!-- 📸 Imagem de fundo responsiva 
+        - 1920x1080 para telas grandes (desktop)
+        - 1280x720 para telas médias (tablet e laptop pequenos)
+        - 768x432 para telas pequenas (celulares e tablets pequenos)
+            -->
+        <img 
+        srcset="
+          /assets/img/banner/banner19020-1080.png 1920w, 
+          /assets/img/banner/banner1280-720.png 1280w, 
+          /assets/img/banner/banner768-432.png 768w
+        " 
+        sizes="
+          (min-width: 1200px) 1920px, 
+          (min-width: 768px) 1280px, 
+          768px
+        " 
+        src="./assets/img/banner/banner19020-1080.png" 
+        alt="Imagem de hambúrguer artesanal" 
+        class="position-absolute top-0 start-0 w-100 h-100 object-fit-cover" 
+        aria-hidden="true">
+        
+        <!-- 🎨 Camada escura para melhorar legibilidade -->
+        <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-50"></div>
+      
+        <!-- Texto principal da seção Hero -->
+        <div class="hero-text container position-relative text-white">
+          <h1 class="display-3 display-md-4 fw-bold text-center">Sabor Rústico, Alma Artesanal</h1>
+          <p class="lead fs-5 fs-md-4 fs-lg-3 text-center text-md-start">Hambúrgueres feitos à mão, com ingredientes selecionados</p>
+      
+          <!-- ℹ️ Informações rápidas sobre o status do estabelecimento -->
+          <aside class="hero-info mt-4 p-3 rounded-4 mx-auto bg-opacity-75 bg-dark w-100 w-md-auto" style="max-width: 300px;">
+            <p class="status mb-1">
+              <i class="bi bi-check-circle-fill me-1"></i> Aberto agora
+            </p>
+            <p class="mb-0">
+              <i class="bi bi-clock-fill me-1"></i> 40-50min
+              <a href="#" 
+                 class="text-decoration-none text-warning small" 
+                 data-bs-toggle="modal" 
+                 data-bs-target="#modalHorario" 
+                 aria-describedby="modalHorarioLabel">
+                <span class="text-warning">●</span> Ver mais
+              </a>
+            </p>
+          </aside>
+        </div>
         </section>
+      
 
         <!-- Modal de Informações do Estabelecimento -->
         <div class="modal fade" id="modalHorario" tabindex="-1" aria-labelledby="modalHorarioLabel" aria-hidden="true">
