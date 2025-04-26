@@ -1,0 +1,19 @@
+:root {
+   /* ==================== */
+   /* 🎨 Core Colors (Cores Principais) */
+   /* ==================== */
+   --color-primary: #E63946;    /* Vermelho escuro moderno */
+   --color-secondary: #457B9D;  /* Azul petróleo elegante */
+   --color-light: #F1FAEE;       /* Branco gelo, fundo claro */
+   --color-dark: #1D3557;        /* Azul escuro quase preto */
+   --color-accent: #A8DADC;      /* Verde-água suave para detalhes */
+   
+ }
+
+ :root {
+   --font-primary: 'Inter', sans-serif;        /* Para textos gerais */
+   --font-secondary: 'Open Sans', sans-serif;  /* Para detalhes, menus, botões */
+   --font-title: 'Cal Sans', sans-serif;        /* Para títulos grandes */
+ }
+
+ 

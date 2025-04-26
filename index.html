@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hamburgueria Rústica</title>
+  
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cal+Sans&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <!-- Estilos adicionais (carregar antes do Bootstrap) -->
+    <link rel="stylesheet" href="/css/style.css">
+  
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+  </head>
+  
+<body data-bs-theme="width">
+    <!-- ========== 🌐 HEADER FIXO COM CARRINHO ========== -->
+    <header class="fixed-top">
+      <!-- Navegação Principal (Navbar) -->
+      <nav class="navbar navbar-dark bg-dark py-2 px-3" aria-label="Menu principal">
+        <div class="container px-0" style="max-width: 1024px;">
+          <!-- LOGO: Link para a página inicial, com texto alternativo para acessibilidade -->
+          <a class="navbar-brand d-flex align-items-center" href="/" aria-label="Ir para a página inicial da Hamburgueria Rústica">
+            <img src="./assets/img/logo/logo.svg" alt="Hamburgueria Rústica" class="me-2" width="140" height="50">
+          </a>
+
+          <!-- AÇÕES DO USUÁRIO: Contém o carrinho de compras e informações do usuário -->
+          <div class="d-flex align-items-center gap-3" role="group" aria-label="Ações do usuário">
+            <!-- Informações do usuário -->
+            <div id="user-info" class="text-white small d-none d-md-block" data-user-info></div>
+
+            <!-- CARRINHO: Exibe o ícone do carrinho e a quantidade de itens no carrinho -->
+            <button id="btn-carrinho" type="button" class="btn btn-outline-warning position-relative"
+              data-bs-toggle="modal" data-bs-target="#carrinhoModal" aria-label="Abrir carrinho" aria-live="polite">
+              <i class="bi bi-cart3 fs-5"></i>
+              <!-- Contagem de itens no carrinho -->
+              <span id="cart-count" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" aria-live="polite">0</span>
+            </button>
+
+            <!-- BOTÃO MENU RESPONSIVO: Para abrir o menu em dispositivos móveis -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+              aria-controls="offcanvasNavbar" aria-label="Abrir menu">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          </div>
+
+          <!-- MENU OFFCANVAS: Menu lateral que aparece em dispositivos móveis -->
+          <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+            <div class="offcanvas-header">
+              <!-- LOGO NO MENU MOBILE: Logo da hamburgueria no menu mobile -->
+              <a class="navbar-brand d-flex align-items-center" href="/" aria-label="Ir para a página inicial da Hamburgueria Rústica">
+                <img src="./assets/img/logo/logo.svg" alt="Logo Hamburgueria Rústica" class="me-2" width="140" height="50">
+              </a>
+              <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Fechar"></button>
+            </div>
+            <div class="offcanvas-body">
+              <!-- FORMULÁRIO DE BUSCA: Campo para busca de itens no cardápio -->
+              <form class="d-flex mb-4" role="search" method="GET" action="/buscar">
+                <!-- Atributo name="query" é importante para enviar o valor da pesquisa para o back-end -->
+                <input class="form-control me-2 bg-dark text-white border-light" type="search" placeholder="Buscar no cardápio..." aria-label="Buscar" name="query" required>
+                <!-- Botão para enviar o formulário de busca -->
+                <button class="btn btn-warning" type="submit" aria-label="Pesquisar no cardápio">Buscar</button>
+              </form>
+
+              <!-- MENU PRINCIPAL: Links para as principais seções do site -->
+              <ul class="navbar-nav justify-content-end flex-grow-1 gap-2">
+                <!-- Link para a página inicial -->
+                <li class="nav-item">
+                  <a class="nav-link text-white" href="#home" aria-label="Ir para a página inicial">🏠 Home</a>
+                </li>
+                <!-- Cardápio Dropdown: Menu suspenso com links para as categorias do cardápio -->
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle text-warning" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Abrir submenu de Cardápio">
+                    🍽️ Cardápio
+                  </a>
+                  <ul class="dropdown-menu dropdown-menu-dark">
+                    <!-- Links para as categorias do cardápio -->
+                    <li><a class="dropdown-item" href="#destaques">🍱 Combos</a></li>
+                    <li><a class="dropdown-item" href="#cardapio-hamburguer">🍔 Lanches</a></li>
+                    <li><a class="dropdown-item" href="#cardapio-porcoes">🍟 Porções</a></li>
+                    <li><a class="dropdown-item" href="#cardapio-bebidas">🥤 Bebidas</a></li>
+                    <li><a class="dropdown-item" href="#cardapio-sobremesas">🍰 Sobremesas</a></li>
+                  </ul>
+                </li>
+                <!-- Link para saber mais sobre a hamburgueria -->
+                <li class="nav-item">
+                  <a class="nav-link text-white" href="#sobre" aria-label="Saber mais sobre a Hamburgueria Rústica">🧑‍🍳 Sobre</a>
+                </li>
+                <!-- Link para informações de contato -->
+                <li class="nav-item">
+                  <a class="nav-link text-white" href="#contato" aria-label="Ver informações de contato">📞 Contato</a>
+                </li>
+
+                <!-- Links para redes sociais -->
+                <li class="nav-item mt-4">
+                  <div class="d-flex justify-content-center gap-2">
+                    
+                    <!-- Instagram: Redireciona para a página oficial da Hamburgueria -->
+                    <a href="https://www.instagram.com/sua_hamburgueria" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      class="btn btn-outline-danger d-flex align-items-center justify-content-center rounded-3 border-2 p-2" 
+                      style="width: 44px; height: 44px;" 
+                      data-bs-toggle="tooltip" 
+                      data-bs-placement="top" 
+                      title="Instagram">
+                      <i class="bi bi-instagram fs-5"></i>
+                    </a>
+
+                    <!-- Facebook: Redireciona para a página oficial no Facebook -->
+                    <a href="https://www.facebook.com/sua_hamburgueria" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      class="btn btn-outline-primary d-flex align-items-center justify-content-center rounded-3 border-2 p-2" 
+                      style="width: 44px; height: 44px;" 
+                      data-bs-toggle="tooltip" 
+                      data-bs-placement="top" 
+                      title="Facebook">
+                      <i class="bi bi-facebook fs-5"></i>
+                    </a>
+
+                    <!-- WhatsApp: Inicia conversa com mensagem automática -->
+                    <a href="https://wa.me/5547991597258?text=Olá!%20Gostaria%20de%20fazer%20um%20pedido%20🍔" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      class="btn btn-outline-success d-flex align-items-center justify-content-center rounded-3 border-2 p-2" 
+                      style="width: 44px; height: 44px;" 
+                      data-bs-toggle="tooltip" 
+                      data-bs-placement="top" 
+                      title="WhatsApp">
+                      <i class="bi bi-whatsapp fs-5"></i>
+                    </a>
+
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- ========== 🛒 MODAL DO CARRINHO ========== -->
+    <div class="modal fade" id="carrinhoModal" tabindex="-1" aria-labelledby="carrinhoModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-scrollable modal-lg modal-dialog-centered modal-fullscreen-sm-down">
+        <div class="modal-content bg-dark text-white">
+          <!-- Cabeçalho do Modal -->
+          <div class="modal-header border-0">
+            <h5 class="modal-title" id="carrinhoModalLabel">🛒 Seu Carrinho</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fechar"></button>
+          </div>
+
+          <!-- Corpo do Modal: Exibe os itens do carrinho -->
+          <div id="carrinho-itens-container" class="modal-body" aria-live="polite">
+            <!-- A mensagem será atualizada dinamicamente para mostrar os itens no carrinho -->
+            <p class="text-muted">Seu carrinho está vazio.</p>
+          </div>
+
+          <!-- Rodapé do Modal -->
+          <div class="modal-footer border-0">
+            <!-- Botão para continuar comprando -->
+            <button type="button" class="btn btn-outline-light" data-bs-dismiss="modal">Continuar comprando</button>
+            <!-- Botão para finalizar o pedido -->
+            <button id="finalizarPedidoBtn" type="button" class="btn btn-warning" aria-label="Finalizar o pedido e enviar para o WhatsApp">Finalizar pedido</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  
+   
+    <main>
+        <!-- Seção Hero: Exibe uma imagem de fundo com um título e informações rápidas -->
+        <section 
+          id="hero" 
+          class="position-relative d-flex align-items-center justify-content-center text-center overflow-hidden min-vh-100"
+          role="img" 
+          aria-label="Hambúrguer artesanal em destaque com frase: Sabor Rústico, Alma Artesanal">
+
+          <!-- 📸 Imagem de fundo -->
+          <img src="./assets/img/banner/banner.png" alt="Imagem de hambúrguer artesanal" 
+              class="position-absolute top-0 start-0 w-100 h-100 object-fit-cover" 
+              aria-hidden="true">
+
+          <!-- 🎨 Camada escura para melhorar legibilidade -->
+          <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-50"></div>
+
+          <!-- Texto principal da seção Hero -->
+          <div class="hero-text container position-relative text-white">
+              <h1 class="display-3 display-md-4 fw-bold text-center">Sabor Rústico, Alma Artesanal</h1>
+              <p class="lead fs-5 fs-md-4 fs-lg-3 text-center text-md-start">Hambúrgueres feitos à mão, com ingredientes selecionados</p>
+
+              <!-- ℹ️ Informações rápidas sobre o status do estabelecimento -->
+              <aside class="hero-info mt-4 p-3 rounded-4 mx-auto bg-opacity-75 bg-dark" 
+                    class="w-100 w-md-auto" style="max-width: 300px;">
+                  <p class="status mb-1">
+                      <i class="bi bi-check-circle-fill me-1"></i> Aberto agora
+                  </p>
+                  <p class="mb-0">
+                      <i class="bi bi-clock-fill me-1"></i> 40-50min
+                      <a href="#" 
+                      class="text-decoration-none text-warning small" 
+                      data-bs-toggle="modal" 
+                      data-bs-target="#modalHorario" 
+                      aria-describedby="modalHorarioLabel">
+                       <span class="text-warning">●</span> Ver mais
+                   </a>
+                  </p>
+              </aside>
+          </div>
+        </section>
+
+        <!-- Modal de Informações do Estabelecimento -->
+        <div class="modal fade" id="modalHorario" tabindex="-1" aria-labelledby="modalHorarioLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-scrollable modal-lg">
+            <div class="modal-content rounded-4 shadow-lg">
+
+              <!-- Cabeçalho do Modal -->
+              <header class="modal-header bg-dark text-white">
+                <h2 class="modal-title h5" id="modalHorarioLabel">Informações do Estabelecimento</h2>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fechar"></button>
+              </header>
+
+              <!-- Corpo do Modal -->
+              <div class="modal-body bg-light">
+              
+                <!-- 🕒 Horários de Funcionamento -->
+                <section aria-labelledby="horariosTitle" class="mb-4">
+                  <h3 id="horariosTitle" class="fw-bold h6 text-warning">Horários de Funcionamento</h3>
+                  <ul class="list-unstyled small mb-3 text-dark">
+                    <li><strong>DOM:</strong> 18:00 às 23:50</li>
+                    <li><strong>SEG:</strong> 10:30 às 22:50</li>
+                    <li><strong>TER a SÁB:</strong> 10:30 às 23:50</li>
+                  </ul>
+                </section>
+
+                <!-- ☎️ Telefone -->
+                <section aria-labelledby="telefoneTitle" class="mb-4">
+                  <h3 id="telefoneTitle" class="fw-bold h6 text-warning">Telefone</h3>
+                  <p class="small mb-3 text-muted">(47) 99998-8640</p>
+                </section>
+
+                <!-- 📍 Endereço com Mapa -->
+                <section aria-labelledby="enderecoTitle" class="mb-4">
+                  <h3 id="enderecoTitle" class="fw-bold h6 text-warning">Endereço</h3>
+                  <address class="small mb-3">
+                    <div class="rounded-3 overflow-hidden shadow-sm" style="height: 250px;">
+                      <iframe 
+                        src="https://www.google.com/maps/embed?pb=..."
+                        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade" title="Localização da Hamburgueria">
+                      </iframe>
+                    </div>
+                  </address>
+                </section>
+
+                <!-- 🛵 Opções de Entrega -->
+                <section aria-labelledby="entregaTitle" class="mb-4">
+                  <h3 id="entregaTitle" class="fw-bold h6 text-warning">Opções de Entrega</h3>
+                  <p class="small mb-3 text-dark">Delivery • Retirada</p>
+                </section>
+
+                <!-- 💳 Pagamentos -->
+                <section aria-labelledby="pagamentoTitle" class="mb-4">
+                  <h3 id="pagamentoTitle" class="fw-bold h6 text-warning">Pagamento na Entrega</h3>
+                  <ul class="small mb-3 text-dark">
+                    <li>💵 Dinheiro</li>
+                    <li>💳 Cartão de Crédito: Elo, Mastercard, Visa</li>
+                    <li>🏧 Cartão de Débito: Elo, Mastercard, Visa</li>
+                    <li>⚡ Pix Manual</li>
+                  </ul>
+                </section>
+
+                <!-- 🧾 Dados do Estabelecimento -->
+                <section aria-labelledby="dadosTitle">
+                  <h3 id="dadosTitle" class="fw-bold h6 text-warning">Estabelecimento</h3>
+                  <ul class="small mb-0 text-dark">
+                    <li>Razão Social: SUNSET BURGUER & BEER LANCHONETE LTDA ME</li>
+                    <li>CNPJ: 27.854.185/0001-58</li>
+                  </ul>
+                </section>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+    </main>
+    
+    
+    
+
+
+
+
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.js"></script>
+
+  <!-- EmailJS SDK -->
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+
+  <!-- Scripts personalizados -->
+ <script src="/js/main.js"></script>
+ <script src="/js/modules/buscacardapio.js"></script>
+ <script src="/js/modules/carrinho.js"></script>
+ <script src="/js/modules/modalcarrinho.js"></script>
+ <script src="/js/modules/pesquisacarrinho.js"></script>
+ <script src="/js/modules/funcionahora.js"></script>
+ <script src="/js/modules/fechatoggle.js"></script>
+ <script src="/js/modules/whatsapp.js"></script>
+ 
+</body>
+</html>
