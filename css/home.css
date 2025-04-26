@@ -1,0 +1,18 @@
+.hero-zoom {
+    animation: zoomInOut 20s ease-in-out infinite;
+  }
+  
+  @keyframes zoomInOut {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+  }
+  @media (max-width: 768px) {
+    .hero-bg {
+      object-position: center top;
+    }
+  }
+  
