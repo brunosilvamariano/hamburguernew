@@ -200,31 +200,31 @@
             class="hero-bg hero-zoom position-absolute top-0 start-0 w-100 h-100 object-fit-cover" 
             aria-hidden="true">
         
-          <!-- 🎨 Camada escura para melhorar legibilidade -->
-          <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-50"></div>
+            <!-- 🎨 Camada escura para melhorar legibilidade -->
+            <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-50"></div>
         
-          <!-- Texto principal da seção Hero -->
-          <div class="hero-text container position-relative text-white">
-            <h1 class="display-3 display-md-4 fw-bold text-center">Sabor Rústico, Alma Artesanal</h1>
-            <p class="lead fs-5 fs-md-4 fs-lg-3 text-center text-center">Hambúrgueres feitos à mão, com ingredientes selecionados</p>
-        
-            <!-- ℹ️ Informações rápidas sobre o status do estabelecimento -->
-            <aside class="hero-info mt-4 p-3 rounded-4 mx-auto bg-opacity-75 bg-dark w-100 w-md-auto" style="max-width: 300px;">
-              <p class="status mb-1">
-                <i class="bi bi-check-circle-fill me-1"></i> Aberto agora
-              </p>
-              <p class="mb-0">
-                <i class="bi bi-clock-fill me-1"></i> 40-50min
-                <a href="#" 
-                  class="text-decoration-none text-warning small" 
-                  data-bs-toggle="modal" 
-                  data-bs-target="#modalHorario" 
-                  aria-describedby="modalHorarioLabel">
-                  <span class="text-warning">●</span> Ver mais
-                </a>
-              </p>
-            </aside>
-        </div>
+            <!-- Texto principal da seção Hero -->
+            <div class="hero-text container position-relative text-white">
+              <h1 class="display-3 display-md-4 fw-bold text-center">Sabor Rústico, Alma Artesanal</h1>
+              <p class="lead fs-5 fs-md-4 fs-lg-3 text-center text-center">Hambúrgueres feitos à mão, com ingredientes selecionados</p>
+          
+              <!-- ℹ️ Informações rápidas sobre o status do estabelecimento -->
+              <aside class="hero-info mt-4 p-3 rounded-4 mx-auto bg-opacity-75 bg-dark w-100 w-md-auto" style="max-width: 300px;">
+                <p class="status mb-1">
+                  <i class="bi bi-check-circle-fill me-1"></i> Aberto agora
+                </p>
+                <p class="mb-0">
+                  <i class="bi bi-clock-fill me-1"></i> 40-50min
+                  <a href="#" 
+                    class="text-decoration-none text-warning small" 
+                    data-bs-toggle="modal" 
+                    data-bs-target="#modalHorario" 
+                    aria-describedby="modalHorarioLabel">
+                    <span class="text-warning">●</span> Ver mais
+                  </a>
+                </p>
+              </aside>
+          </div>
         </section>
         <!-- Modal de Informações do Estabelecimento -->
         <div class="modal fade" id="modalHorario" tabindex="-1" aria-labelledby="modalHorarioLabel" aria-hidden="true">
@@ -301,44 +301,67 @@
           </div>
         </div>
 
+        <!-- Início da seção de categorias -->
         <section id="categorias" class="py-5 bg-dark">
+          <!-- Container principal com alinhamento centralizado do conteúdo -->
           <div class="container text-center">
-            <h2 class="mb-4 text-white">Navegue por Categorias</h2>
+            
+            <!-- Título da seção -->
+            <h2 class="mb-4 text-white">Explore Nossas Categorias</h2>
+            
+            <!-- Div que contém os botões das categorias -->
             <div class="d-flex flex-wrap justify-content-center gap-3">
-        
-              <!-- Categoria Combos -->
-              <a href="#cardapio-combos" class="btn d-flex justify-content-center align-items-center categoria-btn rounded-circle shadow-sm p-0 border border-dark"
-                 style="width: 80px; height: 80px; transition: transform 0.3s ease-in-out;">
-                <img src="/assets/img/icones/combos.svg" alt="Combos" class="color w-100 h-100 rounded-circle" style="transition: transform 0.3s ease-in-out;">
-              </a>
-        
-              <!-- Categoria Hambúrguer -->
-              <a href="#cardapio-hamburguer" class="btn d-flex justify-content-center align-items-center categoria-btn rounded-circle shadow-sm p-0 border border-dark"
-                 style="width: 80px; height: 80px; transition: transform 0.3s ease-in-out;">
-                <img src="/assets/img/icones/burguer.svg" alt="Hambúrguer" class="color w-100 h-100 rounded-circle" style="transition: transform 0.3s ease-in-out;">
-              </a>
-        
-              <!-- Categoria Porções -->
-              <a href="#cardapio-porcoes" class="btn d-flex justify-content-center align-items-center categoria-btn rounded-circle shadow-sm p-0 border border-dark"
-                 style="width: 80px; height: 80px; transition: transform 0.3s ease-in-out;">
-                <img src="/assets/img/icones/porcoes.svg" alt="Porções" class="color w-100 h-100 rounded-circle" style="transition: transform 0.3s ease-in-out;">
-              </a>
-        
-              <!-- Categoria Sobremesas -->
-              <a href="#cardapio-sobremesas" class="btn d-flex justify-content-center align-items-center categoria-btn rounded-circle shadow-sm p-0 border border-dark"
-                 style="width: 80px; height: 80px; transition: transform 0.3s ease-in-out;">
-                <img src="/assets/img/icones/sobremesa.svg" alt="Sobremesas" class="color w-100 h-100 rounded-circle" style="transition: transform 0.3s ease-in-out;">
-              </a>
-        
-              <!-- Categoria Bebidas -->
-              <a href="#cardapio-bebidas" class="btn d-flex justify-content-center align-items-center categoria-btn rounded-circle shadow-sm p-0 border border-dark"
-                 style="width: 80px; height: 80px; transition: transform 0.3s ease-in-out;">
-                <img src="/assets/img/icones/bebidas.svg" alt="Bebidas" class="color w-100 h-100 rounded-circle" style="transition: transform 0.3s ease-in-out;">
-              </a>
-        
-            </div>
-          </div>
+              
+              <!-- Categoria Combos com imagem SVG -->
+              <article class="d-flex flex-column align-items-center">
+                <a href="#cardapio-combos" class="btn btn-warning rounded-circle d-flex justify-content-center align-items-center fs-5 mb-2" style="width: 50px; height: 50px;" aria-label="Combos">
+                  <img src="/assets/img/icones/combo.svg" alt="Ícone de combo" class="img-fluid" style="max-width: 30px; max-height: 30px;">
+                </a>
+                <a href="#cardapio-combos" class="text-white fw-bold p-2 rounded text-decoration-none categoria-link">Combos</a>
+              </article>
+              
+              <!-- Categoria Hambúrgueres com ícone -->
+              <article class="d-flex flex-column align-items-center">
+                <a href="#cardapio-hamburguer" class="btn btn-warning rounded-circle d-flex justify-content-center align-items-center fs-5 mb-2" style="width: 50px; height: 50px;" aria-label="Hambúrgueres">
+                  <img src="/assets/img/icones/burguer.svg" alt="Ícone de hambúrguer" class="img-fluid" style="max-width: 30px; max-height: 30px;">
+                </a>
+                <a href="#cardapio-hamburguer" class="text-white fw-bold p-2 rounded text-decoration-none categoria-link">Burger</a>
+              </article>
+              
+              <!-- Categoria Porções com ícone -->
+              <article class="d-flex flex-column align-items-center">
+                <a href="#cardapio-porcoes" class="btn btn-warning rounded-circle d-flex justify-content-center align-items-center fs-5 mb-2" style="width: 50px; height: 50px;" aria-label="Porções">
+                  <img src="/assets/img/icones/porcao.svg" alt="Ícone de porções" class="img-fluid" style="max-width: 30px; max-height: 30px;">
+                </a>
+                <a href="#cardapio-porcoes" class="text-white fw-bold p-2 rounded text-decoration-none categoria-link">Porções</a>
+              </article>
+              
+              <!-- Categoria Sobremesas com ícone -->
+              <article class="d-flex flex-column align-items-center">
+                <a href="#cardapio-sobremesas" class="btn btn-warning rounded-circle d-flex justify-content-center align-items-center fs-5 mb-2" style="width: 50px; height: 50px;" aria-label="Sobremesas">
+                  <img src="/assets/img/icones/sobremesa.svg" alt="Ícone de sobremesas" class="img-fluid" style="max-width: 30px; max-height: 30px;">
+                </a>
+                <a href="#cardapio-sobremesas" class="text-white fw-bold p-2 rounded text-decoration-none categoria-link">Doces</a>
+              </article>
+              
+              <!-- Categoria Bebidas com ícone -->
+              <article class="d-flex flex-column align-items-center">
+                <a href="#cardapio-bebidas" class="btn btn-warning rounded-circle d-flex justify-content-center align-items-center fs-5 mb-2" style="width: 50px; height: 50px;" aria-label="Bebidas">
+                  <img src="/assets/img/icones/bebidas.svg" alt="Ícone de bebidas" class="img-fluid" style="max-width: 30px; max-height: 30px;">
+                </a>
+                <a href="#cardapio-bebidas" class="text-white fw-bold p-2 rounded text-decoration-none categoria-link">Bebidas</a>
+              </article>
+              
+            </div> <!-- Fim da div que contém os botões de categorias -->
+          </div> <!-- Fim do container -->
         </section>
+        
+        
+
+        
+        
+        
+        
         
         
         
