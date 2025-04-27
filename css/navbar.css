@@ -1,3 +1,29 @@
-.color {
-    border: 4px solid rgb(0, 0, 0); /* Borda vermelha */
+#mais-pedidos {
+    background-color: #111; /* Fundo escuro para destacar */
   }
+  
+  .card-pedido {
+    border: none;
+    border-radius: 1rem;
+    color: white;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .card-pedido:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Cores diferentes para cada card */
+  .card-amarelo {
+    background: linear-gradient(135deg, #FFD93D, #FFC107);
+  }
+  
+  .card-vermelho {
+    background: linear-gradient(135deg, #FF6B6B, #FF3D3D);
+  }
+  
+  .card-azul {
+    background: linear-gradient(135deg, #4D96FF, #2C7BE5);
+  }
+  

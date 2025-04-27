@@ -355,23 +355,362 @@
             </div> <!-- Fim da div que contém os botões de categorias -->
           </div> <!-- Fim do container -->
         </section>
-        
-        
 
+        <!-- Seção dos Mais Vendidos -->
+        <section id="mais-vendidos" class="py-5" aria-labelledby="titulo-mais-vendidos">
+          <div class="container">
+            <!-- Título da seção -->
+            <header>
+              <h2 id="titulo-mais-vendidos" class="text-center fw-bold mb-5">
+                Os mais vendidos
+              </h2>
+            </header>
         
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+            <div class="row g-4">
+              <!-- Top 1: Burger Master -->
+              <article class="col-lg-4 col-md-6 col-sm-12">
+                <div class="card h-100 border-0 shadow-lg" style="background-color: #fff3e0;">
+                  <figure class="position-relative">
+                    <img src="/assets/img/cards/megaburger.png" class="card-img-top" alt="Burger Master com pão brioche, hambúrguer 180g, queijo cheddar e maionese especial">
+                    <figcaption class="position-absolute top-0 start-0 m-3">
+                      <span class="badge bg-danger text-white">Top 1</span>
+                    </figcaption>
+                  </figure>
+                  <div class="card-body d-flex flex-column">
+                    <h3 class="card-title fw-bold h5 d-flex justify-content-between align-items-center text-danger">
+                      Mega Burger
+                      <span class="badge bg-danger" title="O favorito dos nossos clientes">🔥</span>
+                    </h3>
+                    <p class="card-text small">
+                      Pão brioche, hambúrguer 180g, queijo cheddar, cebola caramelizada e maionese especial da casa. Uma explosão de sabor!
+                    </p>
+                    <p class="fw-bold text-danger mb-2 fs-5">R$ 28,90</p>
+                    <div class="d-flex align-items-center mb-3">
+                      <button class="btn btn-outline-dark btn-sm px-2 py-1 me-2 btn-quantidade" onclick="alterarQuantidade('Burger Master', -1)">−</button>
+                      <span class="quantidade fs-6 fw-semibold" id="quantidade-BurgerMaster">0</span>
+                      <button class="btn btn-outline-dark btn-sm px-2 py-1 ms-2 btn-quantidade" onclick="alterarQuantidade('Burger Master', 1)">+</button>
+                    </div>
+                    <div class="mt-auto d-flex flex-column gap-2">
+                      <button class="btn btn-outline-danger btn-sm py-1 w-100 btn-add-carrinho" data-produto="Burger Master" data-preco="28.90">
+                        <i class="bi bi-cart-plus"></i> Adicionar
+                      </button>
+                      <button class="btn btn-danger btn-sm py-1 w-100 text-white btn-pedir" data-produto="Burger Master" data-preco="28.90">
+                        <i class="bi bi-cash-coin"></i> Comprar agora
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </article>
 
+              <!-- Top 2: Fritas Master -->
+              <article class="col-lg-4 col-md-6 col-sm-12">
+                <div class="card h-100 border-0 shadow-lg" style="background-color: #e8f5e9;">
+                  <figure class="position-relative">
+                    <img src="/assets/img/cards/fritascrocantes.png" class="card-img-top" alt="Fritas Master crocantes e bem temperadas">
+                    <figcaption class="position-absolute top-0 start-0 m-3">
+                      <span class="badge bg-success text-white">Top 2</span>
+                    </figcaption>
+                  </figure>
+                  <div class="card-body d-flex flex-column">
+                    <h3 class="card-title fw-bold h5 d-flex justify-content-between align-items-center text-success">
+                      Fritas Master
+                      <span class="badge bg-success" title="Acompanhamento perfeito">🍟</span>
+                    </h3>
+                    <p class="card-text small">
+                      Fritas crocantes, bem temperadas e com um toque especial de queijo parmesão e ervas finas.
+                    </p>
+                    <p class="fw-bold text-success mb-2 fs-5">R$ 15,90</p>
+                    <div class="d-flex align-items-center mb-3">
+                      <button class="btn btn-outline-dark btn-sm px-2 py-1 me-2 btn-quantidade" onclick="alterarQuantidade('Fritas Master', -1)">−</button>
+                      <span class="quantidade fs-6 fw-semibold" id="quantidade-FritasMaster">0</span>
+                      <button class="btn btn-outline-dark btn-sm px-2 py-1 ms-2 btn-quantidade" onclick="alterarQuantidade('Fritas Master', 1)">+</button>
+                    </div>
+                    <div class="mt-auto d-flex flex-column gap-2">
+                      <button class="btn btn-outline-success btn-sm py-1 w-100 btn-add-carrinho" data-produto="Fritas Master" data-preco="15.90">
+                        <i class="bi bi-cart-plus"></i> Adicionar
+                      </button>
+                      <button class="btn btn-success btn-sm py-1 w-100 text-white btn-pedir" data-produto="Fritas Master" data-preco="15.90">
+                        <i class="bi bi-cash-coin"></i> Comprar agora
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </article>
 
+              <!-- Top 3: Combo Premium -->
+              <article class="col-lg-4 col-md-6 col-sm-12">
+                <div class="card h-100 border-0 shadow-lg" style="background-color: #e1f9ff;">
+                  <figure class="position-relative">
+                    <img src="/assets/img/cards/combopremio.png" class="card-img-top" alt="Combo Premium com hambúrguer, batata frita e refrigerante">
+                    <figcaption class="position-absolute top-0 start-0 m-3">
+                      <span class="badge bg-primary text-white">Top 3</span>
+                    </figcaption>
+                  </figure>
+                  <div class="card-body d-flex flex-column">
+                    <h3 class="card-title fw-bold h5 d-flex justify-content-between align-items-center text-primary">
+                      Combo Premium
+                      <span class="badge bg-primary text-dark" title="Combinação imbatível">🌟</span>
+                    </h3>
+                    <p class="card-text small">
+                      Um combo irresistível: hambúrguer suculento, batata frita crocante e refrigerante gelado para completar a refeição.
+                    </p>
+                    <p class="fw-bold text-primary mb-2 fs-5">R$ 39,90</p>
+                    <div class="d-flex align-items-center mb-3">
+                      <button class="btn btn-outline-dark btn-sm px-2 py-1 me-2 btn-quantidade" onclick="alterarQuantidade('Combo Premium', -1)">−</button>
+                      <span class="quantidade fs-6 fw-semibold" id="quantidade-ComboPremium">0</span>
+                      <button class="btn btn-outline-dark btn-sm px-2 py-1 ms-2 btn-quantidade" onclick="alterarQuantidade('Combo Premium', 1)">+</button>
+                    </div>
+                    <div class="mt-auto d-flex flex-column gap-2">
+                      <button class="btn btn-outline-primary btn-sm py-1 w-100 text-yellow-hover btn-add-carrinho" data-produto="Combo Premium" data-preco="39.90">
+                        <i class="bi bi-cart-plus"></i> Adicionar
+                      </button>
+                      <button class="btn btn-primary btn-sm py-1 w-100 text-white btn-pedir" data-produto="Combo Premium" data-preco="39.90">
+                        <i class="bi bi-cash-coin"></i> Comprar agora
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </div>
+        
+            <!-- Link para o cardápio completo -->
+            <footer class="text-center mt-5">
+              <a href="#cardapio-completo" class="btn btn-outline-dark">
+                Ver cardápio completo
+              </a>
+            </footer>
+          </div>
+        </section>
+
+        <section id="hamburgueres" class="py-5" aria-labelledby="titulo-hamburgueres">
+          <div class="container">
+            <!-- Título da seção -->
+            <header>
+              <h2 id="titulo-hamburgueres" class="text-center fw-bold mb-5">
+                Nossos Hambúrgueres
+              </h2>
+            </header>
+        
+            <div id="produtos-hamburgueres" class="row g-4">
+              <!-- Hamburguer 1 -->
+              <article class="col-lg-4 col-md-6 col-sm-12" data-produto="burger-master">
+                <div class="card h-100 border-0 shadow-lg" style="background-color: #fff3e0;">
+                  <figure class="position-relative">
+                    <img src="/assets/img/cards/megaburger.png" class="card-img-top" alt="Burger Master com pão brioche, hambúrguer 180g, queijo cheddar e maionese especial">
+                    <figcaption class="position-absolute top-0 start-0 m-3">
+                      <span class="badge bg-danger text-white">Top 1</span>
+                    </figcaption>
+                  </figure>
+                  <div class="card-body d-flex flex-column">
+                    <h3 class="card-title fw-bold h5 d-flex justify-content-between align-items-center text-danger">
+                      Mega Burger
+                      <span class="badge bg-danger" title="O favorito dos nossos clientes">🔥</span>
+                    </h3>
+                    <p class="card-text small">
+                      Pão brioche, hambúrguer 180g, queijo cheddar, cebola caramelizada e maionese especial da casa. Uma explosão de sabor!
+                    </p>
+                    <p class="fw-bold text-danger mb-2 fs-5">R$ 28,90</p>
+                    <div class="d-flex align-items-center mb-3">
+                      <button class="btn btn-outline-dark btn-sm px-2 py-1 me-2 btn-quantidade" onclick="alterarQuantidade('Mega Burger', -1)">−</button>
+                      <span class="quantidade fs-6 fw-semibold" id="quantidade-MegaBurger">0</span>
+                      <button class="btn btn-outline-dark btn-sm px-2 py-1 ms-2 btn-quantidade" onclick="alterarQuantidade('Mega Burger', 1)">+</button>
+                    </div>
+                    <div class="mt-auto d-flex flex-column gap-2">
+                      <button class="btn btn-outline-danger btn-sm py-1 w-100 btn-add-carrinho" data-produto="Mega Burger" data-preco="28.90">
+                        <i class="bi bi-cart-plus"></i> Adicionar
+                      </button>
+                      <button class="btn btn-danger btn-sm py-1 w-100 text-white btn-pedir" data-produto="Mega Burger" data-preco="28.90">
+                        <i class="bi bi-cash-coin"></i> Comprar agora
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </article>
+        
+              <!-- Hamburguer 2 -->
+              <article class="col-lg-4 col-md-6 col-sm-12" data-produto="burger-special">
+                <div class="card h-100 border-0 shadow-lg" style="background-color: #fce4ec;">
+                  <figure class="position-relative">
+                    <img src="/assets/img/cards/megaburger.png" class="card-img-top" alt="Burger Special com molho barbecue e bacon crocante">
+                    <figcaption class="position-absolute top-0 start-0 m-3">
+                      <span class="badge bg-info text-white">Top 2</span>
+                    </figcaption>
+                  </figure>
+                  <div class="card-body d-flex flex-column">
+                    <h3 class="card-title fw-bold h5 d-flex justify-content-between align-items-center text-info">
+                      Burger Special
+                      <span class="badge bg-info" title="Com molho barbecue e bacon crocante">🍔</span>
+                    </h3>
+                    <p class="card-text small">
+                      Hambúrguer suculento com molho barbecue, bacon crocante, alface e tomate frescos. Uma combinação deliciosa!
+                    </p>
+                    <p class="fw-bold text-info mb-2 fs-5">R$ 32,90</p>
+                    <div class="d-flex align-items-center mb-3">
+                      <button class="btn btn-outline-dark btn-sm px-2 py-1 me-2 btn-quantidade" onclick="alterarQuantidade('Burger Special', -1)">−</button>
+                      <span class="quantidade fs-6 fw-semibold" id="quantidade-BurgerSpecial">0</span>
+                      <button class="btn btn-outline-dark btn-sm px-2 py-1 ms-2 btn-quantidade" onclick="alterarQuantidade('Burger Special', 1)">+</button>
+                    </div>
+                    <div class="mt-auto d-flex flex-column gap-2">
+                      <button class="btn btn-outline-info btn-sm py-1 w-100 btn-add-carrinho" data-produto="Burger Special" data-preco="32.90">
+                        <i class="bi bi-cart-plus"></i> Adicionar
+                      </button>
+                      <button class="btn btn-info btn-sm py-1 w-100 text-white btn-pedir" data-produto="Burger Special" data-preco="32.90">
+                        <i class="bi bi-cash-coin"></i> Comprar agora
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </article>
+        
+              <!-- Hamburguer 3 -->
+              <article class="col-lg-4 col-md-6 col-sm-12" data-produto="burger-cheddar">
+                <div class="card h-100 border-0 shadow-lg" style="background-color: #e1f5fe;">
+                  <figure class="position-relative">
+                    <img src="/assets/img/cards/megaburger.png" class="card-img-top" alt="Burger Cheddar com molho especial e queijo cheddar derretido">
+                    <figcaption class="position-absolute top-0 start-0 m-3">
+                      <span class="badge bg-primary text-white">Top 3</span>
+                    </figcaption>
+                  </figure>
+                  <div class="card-body d-flex flex-column">
+                    <h3 class="card-title fw-bold h5 d-flex justify-content-between align-items-center text-primary">
+                      Burger Cheddar
+                      <span class="badge bg-primary" title="Com molho especial e queijo cheddar derretido">🧀</span>
+                    </h3>
+                    <p class="card-text small">
+                      Hambúrguer com molho especial, queijo cheddar derretido e cebola roxa caramelizada. Sabor incrível e único!
+                    </p>
+                    <p class="fw-bold text-primary mb-2 fs-5">R$ 35,90</p>
+                    <div class="d-flex align-items-center mb-3">
+                      <button class="btn btn-outline-dark btn-sm px-2 py-1 me-2 btn-quantidade" onclick="alterarQuantidade('Burger Cheddar', -1)">−</button>
+                      <span class="quantidade fs-6 fw-semibold" id="quantidade-BurgerCheddar">0</span>
+                      <button class="btn btn-outline-dark btn-sm px-2 py-1 ms-2 btn-quantidade" onclick="alterarQuantidade('Burger Cheddar', 1)">+</button>
+                    </div>
+                    <div class="mt-auto d-flex flex-column gap-2">
+                      <button class="btn btn-outline-primary btn-sm py-1 w-100 btn-add-carrinho" data-produto="Burger Cheddar" data-preco="35.90">
+                        <i class="bi bi-cart-plus"></i> Adicionar
+                      </button>
+                      <button class="btn btn-primary btn-sm py-1 w-100 text-white btn-pedir" data-produto="Burger Cheddar" data-preco="35.90">
+                        <i class="bi bi-cash-coin"></i> Comprar agora
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </article>
+        
+              <!-- Hamburguer 4 (Oculto) -->
+              <article class="col-lg-4 col-md-6 col-sm-12 d-none" data-produto="burger-deluxe">
+                <div class="card h-100 border-0 shadow-lg" style="background-color: #fff3e0;">
+                  <figure class="position-relative">
+                    <img src="/assets/img/cards/megaburger.png" class="card-img-top" alt="Burger Deluxe com queijo gouda e cebola roxa">
+                    <figcaption class="position-absolute top-0 start-0 m-3">
+                      <span class="badge bg-warning text-white">Deluxe</span>
+                    </figcaption>
+                  </figure>
+                  <div class="card-body d-flex flex-column">
+                    <h3 class="card-title fw-bold h5 d-flex justify-content-between align-items-center text-warning">
+                      Deluxe Burger
+                      <span class="badge bg-warning" title="Com queijo gouda e cebola roxa">🍔</span>
+                    </h3>
+                    <p class="card-text small">
+                      Pão brioche, hambúrguer suculento, queijo gouda derretido e cebola roxa caramelizada. Um toque de sofisticação!
+                    </p>
+                    <p class="fw-bold text-warning mb-2 fs-5">R$ 38,90</p>
+                    <div class="d-flex align-items-center mb-3">
+                      <button class="btn btn-outline-dark btn-sm px-2 py-1 me-2 btn-quantidade" onclick="alterarQuantidade('Deluxe Burger', -1)">−</button>
+                      <span class="quantidade fs-6 fw-semibold" id="quantidade-DeluxeBurger">0</span>
+                      <button class="btn btn-outline-dark btn-sm px-2 py-1 ms-2 btn-quantidade" onclick="alterarQuantidade('Deluxe Burger', 1)">+</button>
+                    </div>
+                    <div class="mt-auto d-flex flex-column gap-2">
+                      <button class="btn btn-outline-warning btn-sm py-1 w-100 btn-add-carrinho" data-produto="Deluxe Burger" data-preco="38.90">
+                        <i class="bi bi-cart-plus"></i> Adicionar
+                      </button>
+                      <button class="btn btn-warning btn-sm py-1 w-100 text-white btn-pedir" data-produto="Deluxe Burger" data-preco="38.90">
+                        <i class="bi bi-cash-coin"></i> Comprar agora
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </article>
+        
+              <!-- Hamburguer 5 (Oculto) -->
+              <article class="col-lg-4 col-md-6 col-sm-12 d-none" data-produto="burger-veggie">
+                <div class="card h-100 border-0 shadow-lg" style="background-color: #e1f5fe;">
+                  <figure class="position-relative">
+                    <img src="/assets/img/cards/megaburger.png" class="card-img-top" alt="Veggie Burger com hambúrguer vegetariano e molho pesto">
+                    <figcaption class="position-absolute top-0 start-0 m-3">
+                      <span class="badge bg-success text-white">Veggie</span>
+                    </figcaption>
+                  </figure>
+                  <div class="card-body d-flex flex-column">
+                    <h3 class="card-title fw-bold h5 d-flex justify-content-between align-items-center text-success">
+                      Veggie Burger
+                      <span class="badge bg-success" title="Com hambúrguer vegetariano e molho pesto">🌱</span>
+                    </h3>
+                    <p class="card-text small">
+                      Hambúrguer vegetariano com molho pesto, alface fresca e tomate. Para quem busca uma opção mais leve!
+                    </p>
+                    <p class="fw-bold text-success mb-2 fs-5">R$ 29,90</p>
+                    <div class="d-flex align-items-center mb-3">
+                      <button class="btn btn-outline-dark btn-sm px-2 py-1 me-2 btn-quantidade" onclick="alterarQuantidade('Veggie Burger', -1)">−</button>
+                      <span class="quantidade fs-6 fw-semibold" id="quantidade-VeggieBurger">0</span>
+                      <button class="btn btn-outline-dark btn-sm px-2 py-1 ms-2 btn-quantidade" onclick="alterarQuantidade('Veggie Burger', 1)">+</button>
+                    </div>
+                    <div class="mt-auto d-flex flex-column gap-2">
+                      <button class="btn btn-outline-success btn-sm py-1 w-100 btn-add-carrinho" data-produto="Veggie Burger" data-preco="29.90">
+                        <i class="bi bi-cart-plus"></i> Adicionar
+                      </button>
+                      <button class="btn btn-success btn-sm py-1 w-100 text-white btn-pedir" data-produto="Veggie Burger" data-preco="29.90">
+                        <i class="bi bi-cash-coin"></i> Comprar agora
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </article>
+        
+              <!-- Hamburguer 6 (Oculto) -->
+              <article class="col-lg-4 col-md-6 col-sm-12 d-none" data-produto="burger-bacon">
+                <div class="card h-100 border-0 shadow-lg" style="background-color: #fff3e0;">
+                  <figure class="position-relative">
+                    <img src="/assets/img/cards/megaburger.png" class="card-img-top" alt="Burger Bacon com bacon crocante e queijo cheddar">
+                    <figcaption class="position-absolute top-0 start-0 m-3">
+                      <span class="badge bg-danger text-white">Bacon</span>
+                    </figcaption>
+                  </figure>
+                  <div class="card-body d-flex flex-column">
+                    <h3 class="card-title fw-bold h5 d-flex justify-content-between align-items-center text-danger">
+                      Bacon Burger
+                      <span class="badge bg-danger" title="Com bacon crocante e queijo cheddar">🥓</span>
+                    </h3>
+                    <p class="card-text small">
+                      Hambúrguer suculento com bacon crocante, queijo cheddar derretido e molho especial. Para quem adora um bom bacon!
+                    </p>
+                    <p class="fw-bold text-danger mb-2 fs-5">R$ 33,90</p>
+                    <div class="d-flex align-items-center mb-3">
+                      <button class="btn btn-outline-dark btn-sm px-2 py-1 me-2 btn-quantidade" onclick="alterarQuantidade('Bacon Burger', -1)">−</button>
+                      <span class="quantidade fs-6 fw-semibold" id="quantidade-BaconBurger">0</span>
+                      <button class="btn btn-outline-dark btn-sm px-2 py-1 ms-2 btn-quantidade" onclick="alterarQuantidade('Bacon Burger', 1)">+</button>
+                    </div>
+                    <div class="mt-auto d-flex flex-column gap-2">
+                      <button class="btn btn-outline-danger btn-sm py-1 w-100 btn-add-carrinho" data-produto="Bacon Burger" data-preco="33.90">
+                        <i class="bi bi-cart-plus"></i> Adicionar
+                      </button>
+                      <button class="btn btn-danger btn-sm py-1 w-100 text-white btn-pedir" data-produto="Bacon Burger" data-preco="33.90">
+                        <i class="bi bi-cash-coin"></i> Comprar agora
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </div>
+        
+            <!-- Link para "Ver mais hambúrgueres" -->
+            <footer class="text-center mt-5">
+              <button id="ver-hamburgueres" class="btn btn-outline-dark" onclick="toggleHamburgueres()">Ver mais hambúrgueres</button>
+            </footer>
+          </div>
+        </section>
+        
+        
 
     </main>
     
@@ -382,22 +721,31 @@
 
 
 
-  <!-- Scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.js"></script>
+ <!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.js"></script>
 
-  <!-- EmailJS SDK -->
-  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+<!-- EmailJS SDK -->
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
 
-  <!-- Scripts personalizados -->
- <script src="/js/main.js"></script>
- <script src="/js/modules/buscacardapio.js"></script>
- <script src="/js/modules/carrinho.js"></script>
- <script src="/js/modules/modalcarrinho.js"></script>
- <script src="/js/modules/pesquisacarrinho.js"></script>
- <script src="/js/modules/funcionahora.js"></script>
- <script src="/js/modules/fechatoggle.js"></script>
- <script src="/js/modules/whatsapp.js"></script>
- 
+<!-- Scripts personalizados -->
+<script src="/js/main.js"></script>
+<script src="/js/modules/buscacardapio.js"></script>
+<script src="/js/modules/carrinho.js"></script>
+<script src="/js/modules/modalcarrinho.js"></script>
+<script src="/js/modules/pesquisacarrinho.js"></script>
+<script src="/js/modules/funcionahora.js"></script>
+<script src="/js/modules/vermais.js"></script>
+<script src="/js/modules/fechatoggle.js"></script>
+<script src="/js/modules/whatsapp.js"></script>
+
+<!-- Scripts dinâmicos -->
+<script src="/js/dinamic/produtos.js"></script>   <!-- Carrega os dados dos produtos dinamicamente -->
+<!-- Não inclua server.js aqui -->
+
+ <!-- Botão para abrir o modal -->
+
+<!-- Modal -->
+
 </body>
 </html>
